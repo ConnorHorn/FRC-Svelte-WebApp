@@ -1,11 +1,11 @@
 
 <script>
     import {SvelteComponent} from "svelte";
-    import { clicks } from './stores.js';
+    import {clicks, startPosX} from './stores.js';
     import {attentionAlert} from "./stores.js";
     let teamNumber = 6328
     let alliance = "Blue"
-    let attention = false;
+    let attention;
     let teammate1 = 6328
     let teammate2 = 3467
     let teammate3 = 2713
@@ -14,6 +14,11 @@
     let teammate3Name = "iRaiders"
     let mode = 1
     let modeString = "auto"
+    const attentionSub = attentionAlert.subscribe(value => {
+        attention = value;
+    });
+
+
     function modeShift(){
         if(mode<3){
             mode++

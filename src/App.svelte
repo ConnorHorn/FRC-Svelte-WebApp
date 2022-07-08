@@ -3,7 +3,8 @@
     import { fade, fly } from 'svelte/transition';
     import {clicks} from "./stores";
     import {attentionAlert} from "./stores";
-    import AutoBlob from "./AutoBlob.svelte";
+    import AutoLobby from "./AutoLobby.svelte";
+    import AutoManager from "./AutoManager.svelte";
 
     let clicksValue;
     let attentionAlertValue;
@@ -19,7 +20,7 @@
 </script>
 
 <HeaderBlob/>
-<AutoBlob/>
+<AutoManager/>
 
 
 
