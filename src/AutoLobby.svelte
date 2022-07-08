@@ -4,7 +4,7 @@
     import {startPosX} from "./stores";
     import {startPosY} from "./stores";
     import {autoStage} from "./stores";
-
+    import {pageLoadNoClick} from "./stores";
     let attentionAlertValue;
     import { fade, fly } from 'svelte/transition';
     const attentionAlertSubscription = attentionAlert.subscribe(value => {
@@ -13,28 +13,36 @@
     let storeStartX;
     let storeStartY;
     let autoStageValue;
-    let selectX = -100;
-    let selectY = -100;
+    let selectX;
+    let selectY;
     let tarmacLoad = false;
+    let pageLoadNoClickValue;
 
     setTimeout(function() {
         tarmacLoad = true;
     }, 200);
 
     const startXSub = startPosX.subscribe(value => {
-        storeStartX = value;
+        selectX = value;
+    });
+
+    const pageLoadNoClickSub = pageLoadNoClick.subscribe(value => {
+        pageLoadNoClickValue = value;
     });
     const startYSub = startPosY.subscribe(value => {
-        storeStartY = value;
+        selectY = value;
     });
     const autoStageSub = autoStage.subscribe(value => {
          autoStageValue = value;
     });
 
+    pageLoadNoClick.update(n=>true);
+
     function tarmacClick(event){
 
-        selectX = event.clientX;
-        selectY = event.clientY;
+        startPosX.update(n=>event.clientX);
+        startPosY.update(n=>event.clientY);
+        pageLoadNoClick.update(n=>false);
     }
 
     function startAuto(){
@@ -56,13 +64,17 @@
     </svg>
 </button>
 
-
 <svg class="overflow-visible absolute z-30" >
-    {#if selectX!==-100}
+    {#if !pageLoadNoClickValue}
         <svg in:fade out:fade x={selectX-110} y={selectY-165} xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 z-30 overflow-visible" fill="none" viewBox="0 0 50 50" stroke="#2563eb"><path  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        {:else}
+        <svg in:fade="{{duration: 3000 }}" out:fade x={selectX-110} y={selectY-165} xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 z-30 overflow-visible" fill="none" viewBox="0 0 50 50" stroke="#2563eb"><path  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
             <path  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
 
     {/if}
+
+
 </svg>
 
 

@@ -1,7 +1,7 @@
 
 <script>
     import {SvelteComponent} from "svelte";
-    import {clicks, startPosX} from './stores.js';
+    import {clicks, matchStage, startPosX} from './stores.js';
     import {attentionAlert} from "./stores.js";
     let teamNumber = 6328
     let alliance = "Blue"
@@ -14,6 +14,9 @@
     let teammate3Name = "iRaiders"
     let mode = 1
     let modeString = "auto"
+    let matchStageValue;
+
+
     const attentionSub = attentionAlert.subscribe(value => {
         attention = value;
     });
@@ -21,10 +24,10 @@
 
     function modeShift(){
         if(mode<3){
-            mode++
+            matchStage.update(n=>n+1)
         }
         else{
-            mode=1
+            matchStage.update(n=>1)
         }
         if(mode===1){
             modeString="auto"
@@ -37,6 +40,10 @@
         }
     }
 
+    const matchValueSubscription = matchStage.subscribe(value => {
+        mode = value;
+    });
+
     function attentionShift(){
         attention = !attention
         attentionAlert.update(n=>!n)
@@ -45,6 +52,7 @@
     function increment6328() {
         clicks.update(n => n + 1);
     }
+
 </script>
 
 <header class="flex items-start gap-x-1" >

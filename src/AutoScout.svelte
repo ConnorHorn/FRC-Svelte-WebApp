@@ -1,35 +1,10 @@
 <script>
-
-  import {attentionAlert} from "./stores";
-
-  let elapsed = 0;
-  let duration = 15000;
-  let alertDuration = 25000;
-
-  let last_time = window.performance.now();
-  let frame;
-
-  let attentionAlertValue;
-  const attentionAlertSubscription = attentionAlert.subscribe(value => {
-    attentionAlertValue = value;
-  });
-
-
-
-  (function update() {
-    frame = requestAnimationFrame(update);
-
-    const time = window.performance.now();
-    elapsed += time - last_time;
-    last_time = time;
-    if(elapsed >= alertDuration){
-      attentionAlert.update(n=>true);
-    }
-  }());
-
-
+  import AutoScoutControls from "./AutoScoutControls.svelte";
 </script>
 
-<span class="countdown font-mono text-6xl ml-6 mt-6 absolute z-30" style="color: #fbbf24">
-  <span style="--value:{parseInt((duration/1000-elapsed/1000)+0.99)};"></span>
-</span>
+<div class="grid overflow-hidden grid-cols-2 grid-rows-1 gap-2 w-full h-full absolute">
+  <div class="box row-start-1 row-span-1 col-start-1 col-span-1">
+    <AutoScoutControls/>
+  </div>
+  <div class="box row-start-1 row-end-2 col-start-2 col-span-1"></div>
+</div>
