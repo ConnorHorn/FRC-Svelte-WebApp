@@ -7,10 +7,12 @@
     import AutoManager from "./AutoManager.svelte";
     import {matchStage} from "./stores";
     import TeleScout from "./TeleScout.svelte";
+    import PostScout from "./PostScout.svelte";
 
     let clicksValue;
     let attentionAlertValue;
     let matchStageValue;
+    let properSize=false;
 
     const clickSubscription = clicks.subscribe(value => {
         clicksValue = value;
@@ -22,9 +24,12 @@
         attentionAlertValue = value;
     });
 
+    properSize = window.innerWidth === 1024 &&  window.innerHeight === 600;
 
 </script>
 
+
+{#if properSize}
 
 <main class:scroll-lock={true}>
 <HeaderBlob/>
@@ -33,8 +38,12 @@
 {:else if matchStageValue===2}
 <TeleScout/>
 {:else}
+    <PostScout/>
 {/if}
 </main>
+    {:else}
+    Please resize your window to 1024x600 🙂
+    {/if}
 
     <style>
     .scroll-lock {

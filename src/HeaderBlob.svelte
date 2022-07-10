@@ -15,6 +15,7 @@
     let mode = 1
     let modeString = "auto"
     let matchStageValue;
+    let scoutName = "Connor"
 
 
     const attentionSub = attentionAlert.subscribe(value => {
@@ -60,7 +61,7 @@
     <button style="font-size: 75px; font-family: Roboto,sans-serif"  on:click={modeShift}  class="w-2/6 h-24 btn btn-outline btn-primary">{modeString}</button>
 
 <!--Undo Button-->
-    <button style="font-size: 35px; font-family: Roboto,sans-serif" class="w-1/6 h-24 btn btn-outline btn-secondary">Undo</button>
+    <button style="font-size: 20px; font-family: Roboto,sans-serif" class="w-1/6 h-24 btn btn-outline btn-secondary">{scoutName}</button>
 
 <!--Team Number-->
     <button on:click={increment6328} style="font-size: 35px; font-family: Roboto,sans-serif" class="w-1/6 h-24 btn btn-outline btn-secondary">{teamNumber}</button>
