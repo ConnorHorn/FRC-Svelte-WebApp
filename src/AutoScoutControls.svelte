@@ -1,6 +1,6 @@
 <script>
 
-    import {attentionAlert} from "./stores";
+    import {attentionAlert, matchStage} from "./stores";
     import { fade, fly } from 'svelte/transition';
     import {autoStage, autoUpperScore, autoUpperFail, autoLowerFail, autoLowerScore} from "./stores";
 
@@ -8,6 +8,7 @@
     let duration = 15000;
     let alertDuration = 25000;
     let countDownElapsed=false;
+    let matchStageValue;
 
     let last_time = window.performance.now();
     let frame;
@@ -24,6 +25,12 @@
     let autoLowerScoreValue;
     let autoLowerFailValue;
 
+    let autoStageValue;
+
+    const autoStageSub = autoStage.subscribe(value => {
+        autoStageValue = value;
+    });
+
 
 
     const autoUpperScoreSub = autoUpperScore.subscribe(value => {
@@ -37,6 +44,9 @@
     });
     const autoLowerFailSub = autoLowerFail.subscribe(value => {
       autoLowerFailValue = value;
+    });
+    const matchStageSub = matchStage.subscribe(value => {
+        matchStageValue = value;
     });
 
     function upperScorePlus(){
@@ -76,16 +86,14 @@
         const time = window.performance.now();
         elapsed += time - last_time;
         last_time = time;
-        if(elapsed >= alertDuration && !hasUpdatedAttention){
+        if(elapsed >= alertDuration && !hasUpdatedAttention && matchStageValue===1 && autoStageValue===2){
             attentionAlert.update(n=>true);
             hasUpdatedAttention=true;
         }
-      if(elapsed >= alertDuration){
-        countDownElapsed=true;
-      }
-      else{
-        countDownElapsed=false;
-      }
+        if(elapsed >= alertDuration && !hasUpdatedAttention && (matchStageValue!==1 || autoStageValue!==2)){
+        elapsed=0;
+        }
+      countDownElapsed = elapsed >= alertDuration;
     }());
 
     function backButton(){
@@ -96,7 +104,7 @@
 
 
 
-<div class="grid overflow-hidden grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute z-10 "in:fade="{{duration:800}}">
+<div class="grid overflow-hidden grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute z-10 " in:fade="{{duration:800}}">
   <div class="box row-start-1 row-span-1 col-start-1 col-span-1">
 
 
@@ -156,11 +164,6 @@
 
 
 
-
-
-
-
-
   </div>
   <div class="box row-start-2 row-span-1 col-start-1 col-span-1">
 
@@ -209,6 +212,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24  ml-9 mt-4" fill="none" viewBox="0 0 39 39" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" /></svg>
         </button>
       </div>
+
+
     </div>
 
 

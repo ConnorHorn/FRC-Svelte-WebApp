@@ -36,7 +36,7 @@
             modeString="tele"
         }
         else{
-            modeString="end"
+            modeString="post"
         }
     }
 

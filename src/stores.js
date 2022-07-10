@@ -12,3 +12,7 @@ export const autoUpperScore = writable(0);
 export const autoUpperFail = writable(0);
 export const autoLowerScore = writable(0);
 export const autoLowerFail = writable(0);
+export const teleUpperScore = writable(0);
+export const teleUpperFail = writable(0);
+export const teleLowerScore = writable(0);
+export const teleLowerFail = writable(0);

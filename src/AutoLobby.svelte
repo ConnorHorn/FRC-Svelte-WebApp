@@ -60,7 +60,7 @@
 <button class="btn btn-outline btn-success gap-2 mt-36 ml-36 w-72 h-48 text-2xl absolute" on:click={startAuto}>
     Begin Auto
     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-
+    <svg data-content="./images/taxi-cab.svg"/>
     </svg>
 </button>
 
