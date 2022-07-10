@@ -9,7 +9,8 @@ ghpages.publish(
             name: 'ConnorHorn',
             email: 'connorhornet@gmail.com',
 
-        }
+        },
+        dotfiles: true
     },
     () => {
         console.log('Deploy Complete!');
