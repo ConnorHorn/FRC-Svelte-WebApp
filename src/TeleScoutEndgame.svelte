@@ -1,4 +1,5 @@
 <script>
+    import {climbAttemptLevel, climbSuccessLevel} from "./stores";
 
     let heightAtt=0;
     let heightSucc=0;

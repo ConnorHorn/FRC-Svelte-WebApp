@@ -1,6 +1,5 @@
 
 <script>
-    import {SvelteComponent} from "svelte";
     import {clicks, matchStage, startPosX} from './stores.js';
     import {attentionAlert} from "./stores.js";
     let teamNumber = 6328
@@ -14,7 +13,6 @@
     let teammate3Name = "iRaiders"
     let mode = 1
     let modeString = "auto"
-    let matchStageValue;
     let scoutName = "Connor"
 
 
