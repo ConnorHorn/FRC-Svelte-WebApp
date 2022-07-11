@@ -1,4 +1,14 @@
 <script>
+    import {
+        playDefenseDuration,
+        playDefenseQuality,
+        error,
+        receiveDefenseDuration,
+        intakeQuality,
+        comment,
+        drivingQuality,
+        sauceQuality,
+    } from "./stores";
     let defenseRating=0;
     let drivingRating=2;
     let defenseDuration=0;
@@ -10,6 +20,42 @@
     function shiftBad(){
         badStatus=!badStatus;
     }
+
+    const defDurSub = playDefenseDuration.subscribe(value => {
+        defenseDuration = value;
+    });
+    const recDefDurSub = receiveDefenseDuration.subscribe(value => {
+        recDefenseDuration = value;
+    });
+    const defRatingSub = playDefenseQuality.subscribe(value => {
+        defenseDuration = value;
+    });
+    const errorSub = error.subscribe(value => {
+        badStatus = value;
+    });
+    const intakeSub = intakeQuality.subscribe(value => {
+        intakeRating = value;
+    });
+    const commentSub = comment.subscribe(value => {
+        badStatus = value;
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <div class="ml-[10px] absolute font-bold text-xl leading-[40px]">

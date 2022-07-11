@@ -1,5 +1,5 @@
 <script>
-    import {climbAttemptLevel, climbSuccessLevel} from "./stores";
+    import {climbAttemptLevel, climbSuccessLevel, teleUpperScore} from "./stores";
 
     let heightAtt=0;
     let heightSucc=0;
@@ -14,7 +14,17 @@
         if(heightSucc>heightAtt){
             heightAtt=heightSucc;
         }
+        climbAttemptLevel.update(n=>heightAtt);
+        climbSuccessLevel.update(n=>heightSucc);
     }
+
+    const attemptSub = climbAttemptLevel.subscribe(value => {
+        heightAtt = value;
+    });
+
+    const successSub = climbSuccessLevel.subscribe(value => {
+        heightSucc = value;
+    });
 
 </script>
 
