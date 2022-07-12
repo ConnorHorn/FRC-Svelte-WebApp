@@ -8,6 +8,8 @@
     import {matchStage} from "./stores";
     import TeleScout from "./TeleScout.svelte";
     import PostScout from "./PostScout.svelte";
+    import QRGenPage from "./QRGenPage.svelte";
+    import StartPage from "./StartPage.svelte";
 
     let clicksValue;
     let attentionAlertValue;
@@ -30,15 +32,21 @@
 
 
 {#if properSize}
-
 <main class:scroll-lock={true}>
-<HeaderBlob/>
+
+    {#if matchStageValue>0}
+        <HeaderBlob/>
+        {/if}
 {#if matchStageValue===1}
     <AutoManager/>
 {:else if matchStageValue===2}
 <TeleScout/>
-{:else}
+{:else if matchStageValue===3}
     <PostScout/>
+    {:else if matchStageValue===4}
+    <QRGenPage/>
+    {:else if matchStageValue===0}
+    <StartPage/>
 {/if}
 </main>
     {:else}

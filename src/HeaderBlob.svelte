@@ -1,6 +1,6 @@
 
 <script>
-    import {clicks, matchStage, startPosX} from './stores.js';
+    import {clicks, matchStage, matchStageString, startPosX} from './stores.js';
     import {attentionAlert} from "./stores.js";
     let teamNumber = 6328
     let alliance = "Blue"
@@ -11,7 +11,6 @@
     let teammate1Name = "Mechanical Advantage"
     let teammate2Name = "Windham Windup"
     let teammate3Name = "iRaiders"
-    let mode = 1
     let modeString = "auto"
     let scoutName = "Connor"
 
@@ -22,47 +21,56 @@
 
 
     function modeShift(){
-        if(mode<3){
+
+        if($matchStage<3){
             matchStage.update(n=>n+1)
         }
         else{
             matchStage.update(n=>1)
         }
-        if(mode===1){
-            modeString="auto"
+
+        switch($matchStage){
+            case 0:
+                matchStageString.update(n=>"setup")
+            break;
+
+            case 1:
+                matchStageString.update(n=>"auto")
+            break;
+            case 2:
+                matchStageString.update(n=>"tele")
+            break;
+            case 3:
+                matchStageString.update(n=>"post")
+            break;
+            case 1:
+                matchStageString.update(n=>"qr")
+            break;
+
+
         }
-        else if(mode===2){
-            modeString="tele"
-        }
-        else{
-            modeString="post"
-        }
+
     }
 
-    const matchValueSubscription = matchStage.subscribe(value => {
-        mode = value;
-    });
+
 
     function attentionShift(){
         attention = !attention
         attentionAlert.update(n=>!n)
     }
 
-    function increment6328() {
-        clicks.update(n => n + 1);
-    }
 
 </script>
 
 <header class="flex items-start gap-x-1" >
 <!--Controls Stage of Match-->
-    <button style="font-size: 75px; font-family: Roboto,sans-serif"  on:click={modeShift}  class="w-2/6 h-24 btn btn-outline btn-primary">{modeString}</button>
+    <button style="font-size: 75px; font-family: Roboto,sans-serif"  on:click={modeShift}  class="w-2/6 h-24 btn btn-outline btn-primary">{$matchStageString}</button>
 
 <!--Undo Button-->
     <button style="font-size: 20px; font-family: Roboto,sans-serif" class="w-1/6 h-24 btn btn-outline btn-secondary">{scoutName}</button>
 
 <!--Team Number-->
-    <button on:click={increment6328} style="font-size: 35px; font-family: Roboto,sans-serif" class="w-1/6 h-24 btn btn-outline btn-secondary">{teamNumber}</button>
+    <button style="font-size: 35px; font-family: Roboto,sans-serif" class="w-1/6 h-24 btn btn-outline btn-secondary">{teamNumber}</button>
 
 <!--Attention Alert Button-->
     {#if attention}
@@ -90,7 +98,7 @@
     <input type="checkbox" id="my-modal-4" class="modal-toggle" />
     <label for="my-modal-4" class="modal cursor-pointer" style ="font-family: Roboto,sans-serif">
         <label class="modal-box relative">
-            <h3 class="text-lg font-bold">{alliance} Alliance Summary</h3>
+            <h3 class="text-lg font-bold">{alliance} Alliance Summary - PlaceHolder</h3>
             <p class="py-4">Driver Station 1: {teammate1} - {teammate1Name}</p>
             <p class="py-4">Driver Station 2: {teammate2} - {teammate2Name}</p>
             <p class="py-4">Driver Station 3: {teammate3} - {teammate3Name}</p>

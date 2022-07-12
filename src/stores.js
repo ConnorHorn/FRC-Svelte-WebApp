@@ -1,7 +1,11 @@
 import {writable} from "svelte/store";
 
-
-export const matchStage = writable(1);
+export const alliance = writable("Red");
+export const teamNumber = writable();
+export const name = writable("");
+export const matchStage = writable(0);
+export const matchStageString = writable("auto")
+export const taxi = writable(false);
 export const clicks = writable(0);
 export const attentionAlert = writable(false);
 export const startPosX = writable(-500);

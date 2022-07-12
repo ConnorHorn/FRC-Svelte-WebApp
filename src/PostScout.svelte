@@ -8,6 +8,7 @@
         comment,
         drivingQuality,
         sauceQuality,
+        matchStage
     } from "./stores";
     let defenseRating=0;
     let drivingRating=2;
@@ -16,6 +17,8 @@
     let sauceRating=1;
     let intakeRating=1;
     let badStatus=false;
+    let commentText="";
+    let matchStageValue;
 
     function shiftBad(){
         badStatus=!badStatus;
@@ -28,7 +31,7 @@
         recDefenseDuration = value;
     });
     const defRatingSub = playDefenseQuality.subscribe(value => {
-        defenseDuration = value;
+        defenseRating = value;
     });
     const errorSub = error.subscribe(value => {
         badStatus = value;
@@ -37,17 +40,39 @@
         intakeRating = value;
     });
     const commentSub = comment.subscribe(value => {
-        badStatus = value;
+        commentText = value;
     });
+    const drivingSub = drivingQuality.subscribe(value => {
+        drivingRating = value;
+    })
+    const sauceSub = sauceQuality.subscribe(value => {
+        sauceRating = value;
+    })
+    const matchStageSub = matchStage.subscribe(value => {
+        matchStageValue = value;
+    })
 
 
 
+    $: {
+        updateStores(defenseDuration, recDefenseDuration, defenseRating, badStatus, intakeRating, commentText, drivingRating, sauceRating);
+    }
 
 
+    function updateStores(){
+        playDefenseDuration.update(n=>defenseDuration);
+        receiveDefenseDuration.update(n=>recDefenseDuration);
+        playDefenseQuality.update(n=>defenseRating);
+        error.update(n=>badStatus);
+        intakeQuality.update(n=>intakeRating);
+        comment.update(n=>commentText);
+        drivingQuality.update(n=>drivingRating);
+        sauceQuality.update(n=>sauceRating);
+    }
 
-
-
-
+    function QRTime(){
+        matchStage.update(n=>matchStageValue+1);
+    }
 
 
 
@@ -144,5 +169,8 @@
         <input type="radio" name="intakeRating" bind:group ={intakeRating} class="bg-amber-500 mask mask-star-2 mask-half-2" value={5}/>
     </div>
 </div>
-<textarea class="textarea text-3xl textarea-primary fixed ml-5 w-[985px] h-[200px] mt-72" placeholder="Comment"></textarea>
-
+<textarea bind:value = {commentText} class="textarea text-3xl textarea-primary fixed ml-5 w-[665px] h-[200px] mt-72" placeholder="Comment"></textarea>
+<button on:click={QRTime} class="btn btn-square btn-success btn-outline z-40 w-[200px] h-[200px]  ml-[750px] mt-72">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg></button>
