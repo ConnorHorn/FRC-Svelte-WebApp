@@ -1,12 +1,12 @@
 import {writable} from "svelte/store";
-
+//All the stored variables, better ways of organizing this that I was too lazy to do
 export const alliance = writable("Red");
 export const teamNumber = writable();
+export const autoNotif = writable(false);
 export const name = writable("");
 export const matchStage = writable(0);
 export const matchStageString = writable("auto")
 export const taxi = writable(false);
-export const clicks = writable(0);
 export const attentionAlert = writable(false);
 export const startPosX = writable(-500);
 export const startPosY = writable(-500);

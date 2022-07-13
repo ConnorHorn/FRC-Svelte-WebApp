@@ -15,10 +15,13 @@
     let scoutName = "Connor"
 
 
+    //hate subscriptions
     const attentionSub = attentionAlert.subscribe(value => {
         attention = value;
     });
 
+
+    //handles switching the stage of the match, through use of the big button
 
     function modeShift(){
 
@@ -53,7 +56,7 @@
     }
 
 
-
+    //changes the attention alert button
     function attentionShift(){
         attention = !attention
         attentionAlert.update(n=>!n)

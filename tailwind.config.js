@@ -1,6 +1,7 @@
 module.exports = {
   daisyui: {
     themes: [
+      //  DaisyUI Theme manager
       {
         mytheme: {
 

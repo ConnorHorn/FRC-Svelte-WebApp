@@ -1,38 +1,27 @@
 <script>
 
-    import {attentionAlert, matchStage} from "./stores";
+    import {attentionAlert, matchStage, autoNotif} from "./stores";
     import { fade, fly } from 'svelte/transition';
     import {autoStage, autoUpperScore, autoUpperFail, autoLowerFail, autoLowerScore} from "./stores";
-
     let elapsed = 0;
     let duration = 15000;
     let alertDuration = 25000;
     let countDownElapsed=false;
     let matchStageValue;
-
     let last_time = window.performance.now();
     let frame;
     let hasUpdatedAttention = false;
-
-    let attentionAlertValue;
-    const attentionAlertSubscription = attentionAlert.subscribe(value => {
-        attentionAlertValue = value;
-    });
     let autoModeValue;
-
     let autoUpperScoreValue;
     let autoUpperFailValue;
     let autoLowerScoreValue;
     let autoLowerFailValue;
-
     let autoStageValue;
 
+    //please for the love of all this is good, dont do subs, do $variableName
     const autoStageSub = autoStage.subscribe(value => {
         autoStageValue = value;
     });
-
-
-
     const autoUpperScoreSub = autoUpperScore.subscribe(value => {
       autoUpperScoreValue = value;
     });
@@ -49,6 +38,7 @@
         matchStageValue = value;
     });
 
+    //bad way of doing this but was nice at the time. Just handles the functions to adjust the scoring in auto
     function upperScorePlus(){
       autoUpperScore.update(n=>n+1)
     }
@@ -74,48 +64,38 @@
       autoLowerFail.update(n=>n-1)
     }
 
-
-
-
-
-
-
+    //keeps track of milliseconds elapsed since star of page load. And decided whether to update the attention button accordingly or not.
     (function update() {
         frame = requestAnimationFrame(update);
 
         const time = window.performance.now();
         elapsed += time - last_time;
         last_time = time;
-        if(elapsed >= alertDuration && !hasUpdatedAttention && matchStageValue===1 && autoStageValue===2){
+        if(elapsed >= alertDuration && !$autoNotif && matchStageValue===1 && autoStageValue===2){
             attentionAlert.update(n=>true);
-            hasUpdatedAttention=true;
+            autoNotif.update(n=>true);
         }
-        if(elapsed >= alertDuration && !hasUpdatedAttention && (matchStageValue!==1 || autoStageValue!==2)){
+        if(elapsed >= alertDuration && !$autoNotif && (matchStageValue!==1 || autoStageValue!==2)){
         elapsed=0;
         }
       countDownElapsed = elapsed >= alertDuration;
     }());
 
+    //goes back to the auto lobby
     function backButton(){
       autoStage.update(n=>n-1);
     }
 
 </script>
 
-
-
-<div class="grid  grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute z-10 " in:fade="{{duration:800}}">
+<!--Big grid contains the upper vs lower distinction. secondary grid stores the 7 different elements in each. Gross implementation.-->
+<div class="grid  grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute " in:fade="{{duration:800}}">
   <div class="box row-start-1 row-span-1 col-start-1 col-span-1">
-
-
-
-
-
 
     <div class="grid  grid-cols-3 grid-rows-3 gap-2 w-2/5 h-2/5 absolute ml-36 mt-1">
       <div class="box row-start-1 row-span-1 col-start-1 col-span-1 absolute z-20">
 <!--        Auto Upper Score Add-->
-        <button on:click={upperScorePlus}   class="btn btn-success btn-outline btn-square w-36 h-24">
+        <button on:click={upperScorePlus}   class="btn btn-success btn-outline btn-square w-36 h-24 ">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24  ml-9 mt-4" fill="none" viewBox="0 0 39 39" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" /></svg>
         </button>
       </div>
@@ -125,7 +105,7 @@
   <span style="--value:{autoUpperScoreValue};"></span>
 </span>
       </div>
-      <div class="box row-start-3 row-span-1 col-start-1 col-span-1">
+      <div class="box row-start-3 row-span-1 col-start-1 col-span-1 z-30">
 <!--        Auto Upper Score Minus-->
         <button on:click={upperScoreMinus}  class="btn btn-success btn-outline btn-square w-36 h-24 -mt-5">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24  ml-9 mt-4" fill="none" viewBox="0 0 39 39" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" /></svg>
@@ -147,7 +127,7 @@
   <span style="--value:{autoUpperFailValue};"></span>
 </span>
       </div>
-      <div class="box row-start-3 row-span-1 col-start-3 col-span-1">
+      <div class="box row-start-3 row-span-1 col-start-3 col-span-1 z-30">
 <!--        Auto Upper Fail Minus-->
         <button on:click={upperFailMinus} class="btn btn-error btn-outline btn-square w-36 h-24 -ml-3 -mt-5">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24  ml-9 mt-4" fill="none" viewBox="0 0 39 39" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" /></svg>
@@ -184,7 +164,7 @@
   <span style="--value:{autoLowerScoreValue};"></span>
 </span>
       </div>
-      <div class="box row-start-3 row-span-1 col-start-1 col-span-1">
+      <div class="box row-start-3 row-span-1 col-start-1 col-span-1 z-30">
         <!--        Auto Lower Score Minus-->
         <button on:click={lowerScoreMinus} class="btn btn-success btn-outline btn-square w-36 h-24 -mt-5">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24  ml-9 mt-4" fill="none" viewBox="0 0 39 39" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" /></svg>
@@ -206,7 +186,7 @@
   <span style="--value:{autoLowerFailValue};"></span>
 </span>
       </div>
-      <div class="box row-start-3 row-span-1 col-start-3 col-span-1">
+      <div class="box row-start-3 row-span-1 col-start-3 col-span-1 z-30">
         <!--        Auto Upper Fail Minus-->
         <button on:click={lowerFailMinus} class="btn btn-error btn-outline btn-square w-36 h-24 -ml-3 -mt-5">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24  ml-9 mt-4" fill="none" viewBox="0 0 39 39" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" /></svg>
@@ -215,16 +195,6 @@
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
 
   </div>
 </div>

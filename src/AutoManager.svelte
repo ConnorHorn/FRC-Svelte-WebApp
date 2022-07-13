@@ -1,5 +1,4 @@
 <script>
-    import { onMount} from 'svelte';
     import AutoLobby from "./AutoLobby.svelte";
     import AutoScout from "./AutoScout.svelte";
     import {autoStage} from "./stores";
@@ -12,7 +11,7 @@
 
 </script>
 
-
+<!--legit just holds the two sections of auto and switches appropriately. Probably too convoluted but ¯\_(ツ)_/¯ -->
 {#if stage===1}
     <AutoLobby/>
     {:else}

@@ -742,6 +742,7 @@ var app = (function () {
 
     const alliance = writable("Red");
     const teamNumber = writable();
+    const autoNotif = writable(false);
     const name = writable("");
     const matchStage = writable(0);
     const matchStageString = writable("auto");
@@ -1949,72 +1950,72 @@ var app = (function () {
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "stroke-width", "3");
     			attr_dev(path0, "d", "M12 4v16m8-8H4");
-    			add_location(path0, file$a, 118, 133, 3383);
+    			add_location(path0, file$a, 118, 133, 3373);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 39 39");
     			attr_dev(svg0, "stroke", "currentColor");
-    			add_location(svg0, file$a, 118, 10, 3260);
-    			attr_dev(button0, "class", "btn btn-success btn-outline btn-square w-36 h-24");
-    			add_location(button0, file$a, 117, 8, 3155);
+    			add_location(svg0, file$a, 118, 10, 3250);
+    			attr_dev(button0, "class", "btn btn-success btn-outline btn-square w-36 h-24 ");
+    			add_location(button0, file$a, 117, 8, 3144);
     			attr_dev(div0, "class", "box row-start-1 row-span-1 col-start-1 col-span-1 absolute z-20");
-    			add_location(div0, file$a, 115, 6, 3031);
+    			add_location(div0, file$a, 115, 6, 3020);
     			set_style(span0, "--value", /*autoUpperScoreValue*/ ctx[1]);
-    			add_location(span0, file$a, 124, 2, 3712);
+    			add_location(span0, file$a, 124, 2, 3702);
     			attr_dev(span1, "class", "countdown text-5xl ml-11 mt-3 font-bold");
-    			add_location(span1, file$a, 123, 8, 3654);
+    			add_location(span1, file$a, 123, 8, 3644);
     			attr_dev(div1, "class", "box row-start-2 row-span-1 col-start-1 col-span-1 content-center z-10");
-    			add_location(div1, file$a, 121, 6, 3521);
+    			add_location(div1, file$a, 121, 6, 3511);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "stroke-width", "3");
     			attr_dev(path1, "d", "M20 12H4");
-    			add_location(path1, file$a, 130, 133, 4141);
+    			add_location(path1, file$a, 130, 133, 4136);
     			attr_dev(svg1, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg1, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg1, "fill", "none");
     			attr_dev(svg1, "viewBox", "0 0 39 39");
     			attr_dev(svg1, "stroke", "currentColor");
-    			add_location(svg1, file$a, 130, 10, 4018);
+    			add_location(svg1, file$a, 130, 10, 4013);
     			attr_dev(button1, "class", "btn btn-success btn-outline btn-square w-36 h-24 -mt-5");
-    			add_location(button1, file$a, 129, 8, 3907);
-    			attr_dev(div2, "class", "box row-start-3 row-span-1 col-start-1 col-span-1");
-    			add_location(div2, file$a, 127, 6, 3795);
+    			add_location(button1, file$a, 129, 8, 3902);
+    			attr_dev(div2, "class", "box row-start-3 row-span-1 col-start-1 col-span-1 z-30");
+    			add_location(div2, file$a, 127, 6, 3785);
     			attr_dev(path2, "stroke-linecap", "round");
     			attr_dev(path2, "stroke-linejoin", "round");
     			attr_dev(path2, "stroke-width", "3");
     			attr_dev(path2, "d", "M8 7l4-4m0 0l4 4m-4-4v18");
-    			add_location(path2, file$a, 135, 132, 4502);
+    			add_location(path2, file$a, 135, 132, 4497);
     			attr_dev(svg2, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg2, "class", "h-24 w-24 ml-6 mt-20");
     			attr_dev(svg2, "fill", "none");
     			attr_dev(svg2, "viewBox", "0 0 28 28");
     			attr_dev(svg2, "stroke", "currentColor");
-    			add_location(svg2, file$a, 135, 8, 4378);
+    			add_location(svg2, file$a, 135, 8, 4373);
     			attr_dev(div3, "class", "box row-start-1 row-span-3 col-start-2 col-span-1");
-    			add_location(div3, file$a, 133, 6, 4273);
+    			add_location(div3, file$a, 133, 6, 4268);
     			attr_dev(path3, "stroke-linecap", "round");
     			attr_dev(path3, "stroke-linejoin", "round");
     			attr_dev(path3, "stroke-width", "3");
     			attr_dev(path3, "d", "M12 4v16m8-8H4");
-    			add_location(path3, file$a, 140, 133, 4974);
+    			add_location(path3, file$a, 140, 133, 4969);
     			attr_dev(svg3, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg3, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg3, "fill", "none");
     			attr_dev(svg3, "viewBox", "0 0 39 39");
     			attr_dev(svg3, "stroke", "currentColor");
-    			add_location(svg3, file$a, 140, 10, 4851);
+    			add_location(svg3, file$a, 140, 10, 4846);
     			attr_dev(button2, "class", "btn btn-error btn-outline btn-square w-36 h-24 -ml-3");
-    			add_location(button2, file$a, 139, 8, 4745);
+    			add_location(button2, file$a, 139, 8, 4740);
     			attr_dev(div4, "class", "box row-start-1 row-span-1 col-start-3 col-span-1 z-20");
-    			add_location(div4, file$a, 137, 6, 4631);
+    			add_location(div4, file$a, 137, 6, 4626);
     			set_style(span2, "--value", /*autoUpperFailValue*/ ctx[2]);
-    			add_location(span2, file$a, 146, 2, 5285);
+    			add_location(span2, file$a, 146, 2, 5280);
     			attr_dev(span3, "class", "countdown text-5xl ml-8 mt-3 font-bold");
-    			add_location(span3, file$a, 145, 8, 5228);
+    			add_location(span3, file$a, 145, 8, 5223);
     			attr_dev(div5, "class", "box row-start-2 row-span-1 col-start-3 col-span-1 z-10");
-    			add_location(div5, file$a, 143, 6, 5112);
+    			add_location(div5, file$a, 143, 6, 5107);
     			attr_dev(path4, "stroke-linecap", "round");
     			attr_dev(path4, "stroke-linejoin", "round");
     			attr_dev(path4, "stroke-width", "3");
@@ -2028,12 +2029,12 @@ var app = (function () {
     			add_location(svg4, file$a, 152, 10, 5591);
     			attr_dev(button3, "class", "btn btn-error btn-outline btn-square w-36 h-24 -ml-3 -mt-5");
     			add_location(button3, file$a, 151, 8, 5478);
-    			attr_dev(div6, "class", "box row-start-3 row-span-1 col-start-3 col-span-1");
-    			add_location(div6, file$a, 149, 6, 5367);
+    			attr_dev(div6, "class", "box row-start-3 row-span-1 col-start-3 col-span-1 z-30");
+    			add_location(div6, file$a, 149, 6, 5362);
     			attr_dev(div7, "class", "grid grid-cols-3 grid-rows-3 gap-2 w-2/5 h-2/5 absolute ml-36 mt-1");
-    			add_location(div7, file$a, 114, 4, 2942);
+    			add_location(div7, file$a, 114, 4, 2931);
     			attr_dev(div8, "class", "box row-start-1 row-span-1 col-start-1 col-span-1");
-    			add_location(div8, file$a, 107, 2, 2861);
+    			add_location(div8, file$a, 107, 2, 2850);
     			attr_dev(path5, "stroke-linecap", "round");
     			attr_dev(path5, "stroke-linejoin", "round");
     			attr_dev(path5, "stroke-width", "3");
@@ -2059,90 +2060,90 @@ var app = (function () {
     			attr_dev(path6, "stroke-linejoin", "round");
     			attr_dev(path6, "stroke-width", "3");
     			attr_dev(path6, "d", "M20 12H4");
-    			add_location(path6, file$a, 189, 133, 7179);
+    			add_location(path6, file$a, 189, 133, 7184);
     			attr_dev(svg6, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg6, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg6, "fill", "none");
     			attr_dev(svg6, "viewBox", "0 0 39 39");
     			attr_dev(svg6, "stroke", "currentColor");
-    			add_location(svg6, file$a, 189, 10, 7056);
+    			add_location(svg6, file$a, 189, 10, 7061);
     			attr_dev(button5, "class", "btn btn-success btn-outline btn-square w-36 h-24 -mt-5");
-    			add_location(button5, file$a, 188, 8, 6946);
-    			attr_dev(div11, "class", "box row-start-3 row-span-1 col-start-1 col-span-1");
+    			add_location(button5, file$a, 188, 8, 6951);
+    			attr_dev(div11, "class", "box row-start-3 row-span-1 col-start-1 col-span-1 z-30");
     			add_location(div11, file$a, 186, 6, 6826);
     			attr_dev(path7, "stroke-linecap", "round");
     			attr_dev(path7, "stroke-linejoin", "round");
     			attr_dev(path7, "stroke-width", "3");
     			attr_dev(path7, "d", "M16 17l-4 4m0 0l-4-4m4 4V3");
-    			add_location(path7, file$a, 194, 132, 7548);
+    			add_location(path7, file$a, 194, 132, 7553);
     			attr_dev(svg7, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg7, "class", "h-24 w-24 ml-6 mt-20");
     			attr_dev(svg7, "fill", "none");
     			attr_dev(svg7, "viewBox", "0 0 28 28");
     			attr_dev(svg7, "stroke", "currentColor");
-    			add_location(svg7, file$a, 194, 8, 7424);
+    			add_location(svg7, file$a, 194, 8, 7429);
     			attr_dev(div12, "class", "box row-start-1 row-span-3 col-start-2 col-span-1");
-    			add_location(div12, file$a, 192, 6, 7311);
+    			add_location(div12, file$a, 192, 6, 7316);
     			attr_dev(path8, "stroke-linecap", "round");
     			attr_dev(path8, "stroke-linejoin", "round");
     			attr_dev(path8, "stroke-width", "3");
     			attr_dev(path8, "d", "M12 4v16m8-8H4");
-    			add_location(path8, file$a, 199, 133, 8030);
+    			add_location(path8, file$a, 199, 133, 8035);
     			attr_dev(svg8, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg8, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg8, "fill", "none");
     			attr_dev(svg8, "viewBox", "0 0 39 39");
     			attr_dev(svg8, "stroke", "currentColor");
-    			add_location(svg8, file$a, 199, 10, 7907);
+    			add_location(svg8, file$a, 199, 10, 7912);
     			attr_dev(button6, "class", "btn btn-error btn-outline btn-square w-36 h-24 -ml-3");
-    			add_location(button6, file$a, 198, 8, 7801);
+    			add_location(button6, file$a, 198, 8, 7806);
     			attr_dev(div13, "class", "box row-start-1 row-span-1 col-start-3 col-span-1 z-20");
-    			add_location(div13, file$a, 196, 6, 7679);
+    			add_location(div13, file$a, 196, 6, 7684);
     			set_style(span6, "--value", /*autoLowerFailValue*/ ctx[4]);
-    			add_location(span6, file$a, 205, 2, 8349);
+    			add_location(span6, file$a, 205, 2, 8354);
     			attr_dev(span7, "class", "countdown text-5xl ml-8 mt-3 font-bold");
-    			add_location(span7, file$a, 204, 8, 8292);
+    			add_location(span7, file$a, 204, 8, 8297);
     			attr_dev(div14, "class", "box row-start-2 row-span-1 col-start-3 col-span-1 z-10");
-    			add_location(div14, file$a, 202, 6, 8168);
+    			add_location(div14, file$a, 202, 6, 8173);
     			attr_dev(path9, "stroke-linecap", "round");
     			attr_dev(path9, "stroke-linejoin", "round");
     			attr_dev(path9, "stroke-width", "3");
     			attr_dev(path9, "d", "M20 12H4");
-    			add_location(path9, file$a, 211, 133, 8786);
+    			add_location(path9, file$a, 211, 133, 8796);
     			attr_dev(svg9, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg9, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg9, "fill", "none");
     			attr_dev(svg9, "viewBox", "0 0 39 39");
     			attr_dev(svg9, "stroke", "currentColor");
-    			add_location(svg9, file$a, 211, 10, 8663);
+    			add_location(svg9, file$a, 211, 10, 8673);
     			attr_dev(button7, "class", "btn btn-error btn-outline btn-square w-36 h-24 -ml-3 -mt-5");
-    			add_location(button7, file$a, 210, 8, 8550);
-    			attr_dev(div15, "class", "box row-start-3 row-span-1 col-start-3 col-span-1");
-    			add_location(div15, file$a, 208, 6, 8431);
+    			add_location(button7, file$a, 210, 8, 8560);
+    			attr_dev(div15, "class", "box row-start-3 row-span-1 col-start-3 col-span-1 z-30");
+    			add_location(div15, file$a, 208, 6, 8436);
     			attr_dev(div16, "class", "grid grid-cols-3 grid-rows-3 gap-2 w-2/5 h-2/5 absolute ml-36 -mt-9");
     			add_location(div16, file$a, 173, 4, 5974);
     			attr_dev(div17, "class", "box row-start-2 row-span-1 col-start-1 col-span-1 -mt-[10px]");
     			add_location(div17, file$a, 167, 2, 5884);
-    			attr_dev(div18, "class", "grid grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute z-10 ");
-    			add_location(div18, file$a, 106, 0, 2752);
+    			attr_dev(div18, "class", "grid grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute ");
+    			add_location(div18, file$a, 106, 0, 2746);
     			set_style(span8, "--value", parseInt(/*duration*/ ctx[5] / 1000 - /*elapsed*/ ctx[0] / 1000 + 0.99));
-    			add_location(span8, file$a, 232, 2, 9110);
+    			add_location(span8, file$a, 232, 2, 9120);
     			attr_dev(span9, "class", "countdown font-mono text-6xl ml-6 mt-6 relative absolute z-30");
     			set_style(span9, "color", "#fbbf24");
-    			add_location(span9, file$a, 231, 0, 8970);
+    			add_location(span9, file$a, 231, 0, 8980);
     			attr_dev(path10, "stroke-linecap", "round");
     			attr_dev(path10, "stroke-linejoin", "round");
     			attr_dev(path10, "stroke-width", "2");
     			attr_dev(path10, "d", "M7 16l-4-4m0 0l4-4m-4 4h18");
-    			add_location(path10, file$a, 236, 123, 9440);
+    			add_location(path10, file$a, 236, 123, 9450);
     			attr_dev(svg10, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg10, "class", "h-14 -mt-2 -ml-1");
     			attr_dev(svg10, "fill", "none");
     			attr_dev(svg10, "viewBox", "0 0 20 20");
     			attr_dev(svg10, "stroke", "currentColor");
-    			add_location(svg10, file$a, 236, 4, 9321);
+    			add_location(svg10, file$a, 236, 4, 9331);
     			attr_dev(button8, "class", "btn btn-square btn-outline btn-primary absolute z-30 mt-24 -ml-20 w-24 h-20");
-    			add_location(button8, file$a, 235, 2, 9201);
+    			add_location(button8, file$a, 235, 2, 9211);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2240,24 +2241,24 @@ var app = (function () {
     				mounted = true;
     			}
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*autoUpperScoreValue*/ 2) {
+    		p: function update(ctx, dirty) {
+    			if (dirty[0] & /*autoUpperScoreValue*/ 2) {
     				set_style(span0, "--value", /*autoUpperScoreValue*/ ctx[1]);
     			}
 
-    			if (dirty & /*autoUpperFailValue*/ 4) {
+    			if (dirty[0] & /*autoUpperFailValue*/ 4) {
     				set_style(span2, "--value", /*autoUpperFailValue*/ ctx[2]);
     			}
 
-    			if (dirty & /*autoLowerScoreValue*/ 8) {
+    			if (dirty[0] & /*autoLowerScoreValue*/ 8) {
     				set_style(span4, "--value", /*autoLowerScoreValue*/ ctx[3]);
     			}
 
-    			if (dirty & /*autoLowerFailValue*/ 16) {
+    			if (dirty[0] & /*autoLowerFailValue*/ 16) {
     				set_style(span6, "--value", /*autoLowerFailValue*/ ctx[4]);
     			}
 
-    			if (dirty & /*elapsed*/ 1) {
+    			if (dirty[0] & /*elapsed*/ 1) {
     				set_style(span8, "--value", parseInt(/*duration*/ ctx[5] / 1000 - /*elapsed*/ ctx[0] / 1000 + 0.99));
     			}
     		},
@@ -2300,6 +2301,9 @@ var app = (function () {
     }
 
     function instance$b($$self, $$props, $$invalidate) {
+    	let $autoNotif;
+    	validate_store(autoNotif, 'autoNotif');
+    	component_subscribe($$self, autoNotif, $$value => $$invalidate(21, $autoNotif = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('AutoScoutControls', slots, []);
     	let elapsed = 0;
@@ -2385,12 +2389,12 @@ var app = (function () {
     		$$invalidate(0, elapsed += time - last_time);
     		last_time = time;
 
-    		if (elapsed >= alertDuration && !hasUpdatedAttention && matchStageValue === 1 && autoStageValue === 2) {
+    		if (elapsed >= alertDuration && !$autoNotif && matchStageValue === 1 && autoStageValue === 2) {
     			attentionAlert.update(n => true);
-    			hasUpdatedAttention = true;
+    			autoNotif.update(n => true);
     		}
 
-    		if (elapsed >= alertDuration && !hasUpdatedAttention && (matchStageValue !== 1 || autoStageValue !== 2)) {
+    		if (elapsed >= alertDuration && !$autoNotif && (matchStageValue !== 1 || autoStageValue !== 2)) {
     			$$invalidate(0, elapsed = 0);
     		}
 
@@ -2410,6 +2414,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		attentionAlert,
     		matchStage,
+    		autoNotif,
     		fade,
     		fly,
     		autoStage,
@@ -2447,7 +2452,8 @@ var app = (function () {
     		upperFailMinus,
     		lowerFailPlus,
     		lowerFailMinus,
-    		backButton
+    		backButton,
+    		$autoNotif
     	});
 
     	$$self.$inject_state = $$props => {
@@ -2494,7 +2500,7 @@ var app = (function () {
     class AutoScoutControls extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {});
+    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {}, null, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -2813,7 +2819,7 @@ var app = (function () {
     			create_component(autoscoutdisplay.$$.fragment);
     			attr_dev(div0, "class", "box row-start-1 row-span-1 col-start-1 col-span-1");
     			add_location(div0, file$8, 8, 2, 287);
-    			attr_dev(div1, "class", "box row-start-1 row-end-2 col-start-2 col-span-1 absolute z-20");
+    			attr_dev(div1, "class", "box row-start-1 row-end-2 col-start-2 col-span-1 absolute");
     			add_location(div1, file$8, 12, 2, 392);
     			attr_dev(div2, "class", "grid overflow-hidden grid-cols-2 grid-rows-1 gap-2 w-full h-full fixed");
     			add_location(div2, file$8, 7, 0, 199);
@@ -3263,23 +3269,23 @@ var app = (function () {
     			attr_dev(path0, "stroke-linejoin", "round");
     			attr_dev(path0, "stroke-width", "3");
     			attr_dev(path0, "d", "M12 4v16m8-8H4");
-    			add_location(path0, file$7, 84, 143, 2477);
+    			add_location(path0, file$7, 84, 143, 2472);
     			attr_dev(svg0, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg0, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg0, "fill", "none");
     			attr_dev(svg0, "viewBox", "0 0 39 39");
     			attr_dev(svg0, "stroke", "currentColor");
-    			add_location(svg0, file$7, 84, 20, 2354);
+    			add_location(svg0, file$7, 84, 20, 2349);
     			attr_dev(button0, "class", "btn btn-success btn-square btn-outline w-36 h-24");
-    			add_location(button0, file$7, 83, 16, 2239);
+    			add_location(button0, file$7, 83, 16, 2234);
     			attr_dev(div0, "class", "box row-start-1 row-span-1 col-start-1 col-span-1 absolute z-20");
-    			add_location(div0, file$7, 81, 12, 2091);
+    			add_location(div0, file$7, 81, 12, 2086);
     			set_style(span0, "--value", /*teleUpperScoreValue*/ ctx[0]);
-    			add_location(span0, file$7, 90, 2, 2850);
+    			add_location(span0, file$7, 90, 2, 2845);
     			attr_dev(span1, "class", "countdown text-5xl ml-11 mt-3 font-bold");
-    			add_location(span1, file$7, 89, 16, 2792);
+    			add_location(span1, file$7, 89, 16, 2787);
     			attr_dev(div1, "class", "box row-start-2 row-span-1 col-start-1 col-span-1 content-center z-10");
-    			add_location(div1, file$7, 87, 12, 2635);
+    			add_location(div1, file$7, 87, 12, 2630);
     			attr_dev(path1, "stroke-linecap", "round");
     			attr_dev(path1, "stroke-linejoin", "round");
     			attr_dev(path1, "stroke-width", "3");
@@ -3293,8 +3299,8 @@ var app = (function () {
     			add_location(svg1, file$7, 96, 20, 3202);
     			attr_dev(button1, "class", "btn btn-success btn-square btn-outline w-36 h-24 -mt-5");
     			add_location(button1, file$7, 95, 16, 3081);
-    			attr_dev(div2, "class", "box row-start-3 row-span-1 col-start-1 col-span-1");
-    			add_location(div2, file$7, 93, 12, 2945);
+    			attr_dev(div2, "class", "box row-start-3 row-span-1 col-start-1 col-span-1 z-30");
+    			add_location(div2, file$7, 93, 12, 2940);
     			attr_dev(path2, "stroke-linecap", "round");
     			attr_dev(path2, "stroke-linejoin", "round");
     			attr_dev(path2, "stroke-width", "3");
@@ -3312,132 +3318,132 @@ var app = (function () {
     			attr_dev(path3, "stroke-linejoin", "round");
     			attr_dev(path3, "stroke-width", "3");
     			attr_dev(path3, "d", "M12 4v16m8-8H4");
-    			add_location(path3, file$7, 106, 143, 4248);
+    			add_location(path3, file$7, 106, 143, 4249);
     			attr_dev(svg3, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg3, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg3, "fill", "none");
     			attr_dev(svg3, "viewBox", "0 0 39 39");
     			attr_dev(svg3, "stroke", "currentColor");
-    			add_location(svg3, file$7, 106, 20, 4125);
+    			add_location(svg3, file$7, 106, 20, 4126);
     			attr_dev(button2, "class", "btn btn-error btn-square btn-outline w-36 h-24 -ml-3");
-    			add_location(button2, file$7, 105, 16, 4009);
+    			add_location(button2, file$7, 105, 16, 4010);
     			attr_dev(div4, "class", "box row-start-1 row-span-1 col-start-3 col-span-1 z-20");
     			add_location(div4, file$7, 103, 12, 3871);
     			set_style(span2, "--value", /*teleUpperFailValue*/ ctx[1]);
-    			add_location(span2, file$7, 112, 2, 4603);
+    			add_location(span2, file$7, 112, 2, 4604);
     			attr_dev(span3, "class", "countdown text-5xl ml-8 mt-3 font-bold");
-    			add_location(span3, file$7, 111, 16, 4546);
+    			add_location(span3, file$7, 111, 16, 4547);
     			attr_dev(div5, "class", "box row-start-2 row-span-1 col-start-3 col-span-1 z-10");
-    			add_location(div5, file$7, 109, 12, 4406);
+    			add_location(div5, file$7, 109, 12, 4407);
     			attr_dev(path4, "stroke-linecap", "round");
     			attr_dev(path4, "stroke-linejoin", "round");
     			attr_dev(path4, "stroke-width", "3");
     			attr_dev(path4, "d", "M20 12H4");
-    			add_location(path4, file$7, 118, 143, 5078);
+    			add_location(path4, file$7, 118, 143, 5084);
     			attr_dev(svg4, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg4, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg4, "fill", "none");
     			attr_dev(svg4, "viewBox", "0 0 39 39");
     			attr_dev(svg4, "stroke", "currentColor");
-    			add_location(svg4, file$7, 118, 20, 4955);
+    			add_location(svg4, file$7, 118, 20, 4961);
     			attr_dev(button3, "class", "btn btn-error btn-square btn-outline w-36 h-24 -ml-3 -mt-5");
-    			add_location(button3, file$7, 117, 16, 4832);
-    			attr_dev(div6, "class", "box row-start-3 row-span-1 col-start-3 col-span-1");
-    			add_location(div6, file$7, 115, 12, 4697);
+    			add_location(button3, file$7, 117, 16, 4838);
+    			attr_dev(div6, "class", "box row-start-3 row-span-1 col-start-3 col-span-1 z-30");
+    			add_location(div6, file$7, 115, 12, 4698);
     			attr_dev(div7, "class", "grid grid-cols-3 grid-rows-3 gap-2 w-2/5 h-2/5 absolute ml-36 mt-1");
-    			add_location(div7, file$7, 80, 8, 1996);
+    			add_location(div7, file$7, 80, 8, 1991);
     			attr_dev(div8, "class", "box row-start-1 row-span-1 col-start-1 col-span-1");
-    			add_location(div8, file$7, 73, 4, 1911);
+    			add_location(div8, file$7, 73, 4, 1906);
     			attr_dev(path5, "stroke-linecap", "round");
     			attr_dev(path5, "stroke-linejoin", "round");
     			attr_dev(path5, "stroke-width", "3");
     			attr_dev(path5, "d", "M12 4v16m8-8H4");
-    			add_location(path5, file$7, 137, 143, 5832);
+    			add_location(path5, file$7, 137, 143, 5838);
     			attr_dev(svg5, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg5, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg5, "fill", "none");
     			attr_dev(svg5, "viewBox", "0 0 39 39");
     			attr_dev(svg5, "stroke", "currentColor");
-    			add_location(svg5, file$7, 137, 20, 5709);
+    			add_location(svg5, file$7, 137, 20, 5715);
     			attr_dev(button4, "class", "btn btn-success btn-square btn-outline w-36 h-24");
-    			add_location(button4, file$7, 136, 16, 5596);
+    			add_location(button4, file$7, 136, 16, 5602);
     			attr_dev(div9, "class", "box row-start-1 row-span-1 col-start-1 col-span-1 absolute z-20");
-    			add_location(div9, file$7, 134, 12, 5448);
+    			add_location(div9, file$7, 134, 12, 5454);
     			set_style(span4, "--value", /*teleLowerScoreValue*/ ctx[2]);
-    			add_location(span4, file$7, 143, 2, 6189);
+    			add_location(span4, file$7, 143, 2, 6195);
     			attr_dev(span5, "class", "countdown text-5xl ml-11 mt-3 font-bold");
-    			add_location(span5, file$7, 142, 16, 6131);
+    			add_location(span5, file$7, 142, 16, 6137);
     			attr_dev(div10, "class", "box row-start-2 row-span-1 col-start-1 col-span-1 z-10");
-    			add_location(div10, file$7, 140, 12, 5990);
+    			add_location(div10, file$7, 140, 12, 5996);
     			attr_dev(path6, "stroke-linecap", "round");
     			attr_dev(path6, "stroke-linejoin", "round");
     			attr_dev(path6, "stroke-width", "3");
     			attr_dev(path6, "d", "M20 12H4");
-    			add_location(path6, file$7, 149, 143, 6663);
+    			add_location(path6, file$7, 149, 143, 6674);
     			attr_dev(svg6, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg6, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg6, "fill", "none");
     			attr_dev(svg6, "viewBox", "0 0 39 39");
     			attr_dev(svg6, "stroke", "currentColor");
-    			add_location(svg6, file$7, 149, 20, 6540);
+    			add_location(svg6, file$7, 149, 20, 6551);
     			attr_dev(button5, "class", "btn btn-success btn-square btn-outline w-36 h-24 -mt-5");
-    			add_location(button5, file$7, 148, 16, 6420);
-    			attr_dev(div11, "class", "box row-start-3 row-span-1 col-start-1 col-span-1");
-    			add_location(div11, file$7, 146, 12, 6284);
+    			add_location(button5, file$7, 148, 16, 6431);
+    			attr_dev(div11, "class", "box row-start-3 row-span-1 col-start-1 col-span-1 z-30");
+    			add_location(div11, file$7, 146, 12, 6290);
     			attr_dev(path7, "stroke-linecap", "round");
     			attr_dev(path7, "stroke-linejoin", "round");
     			attr_dev(path7, "stroke-width", "3");
     			attr_dev(path7, "d", "M16 17l-4 4m0 0l-4-4m4 4V3");
-    			add_location(path7, file$7, 154, 140, 7068);
+    			add_location(path7, file$7, 154, 140, 7079);
     			attr_dev(svg7, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg7, "class", "h-24 w-24 ml-6 mt-20");
     			attr_dev(svg7, "fill", "none");
     			attr_dev(svg7, "viewBox", "0 0 28 28");
     			attr_dev(svg7, "stroke", "currentColor");
-    			add_location(svg7, file$7, 154, 16, 6944);
+    			add_location(svg7, file$7, 154, 16, 6955);
     			attr_dev(div12, "class", "box row-start-1 row-span-3 col-start-2 col-span-1");
-    			add_location(div12, file$7, 152, 12, 6815);
+    			add_location(div12, file$7, 152, 12, 6826);
     			attr_dev(path8, "stroke-linecap", "round");
     			attr_dev(path8, "stroke-linejoin", "round");
     			attr_dev(path8, "stroke-width", "3");
     			attr_dev(path8, "d", "M12 4v16m8-8H4");
-    			add_location(path8, file$7, 159, 143, 7588);
+    			add_location(path8, file$7, 159, 143, 7599);
     			attr_dev(svg8, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg8, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg8, "fill", "none");
     			attr_dev(svg8, "viewBox", "0 0 39 39");
     			attr_dev(svg8, "stroke", "currentColor");
-    			add_location(svg8, file$7, 159, 20, 7465);
+    			add_location(svg8, file$7, 159, 20, 7476);
     			attr_dev(button6, "class", "btn btn-error btn-square btn-outline w-36 h-24 -ml-3");
-    			add_location(button6, file$7, 158, 16, 7349);
+    			add_location(button6, file$7, 158, 16, 7360);
     			attr_dev(div13, "class", "box row-start-1 row-span-1 col-start-3 col-span-1 z-20");
-    			add_location(div13, file$7, 156, 12, 7211);
+    			add_location(div13, file$7, 156, 12, 7222);
     			set_style(span6, "--value", /*teleLowerFailValue*/ ctx[3]);
-    			add_location(span6, file$7, 165, 2, 7943);
+    			add_location(span6, file$7, 165, 2, 7954);
     			attr_dev(span7, "class", "countdown text-5xl ml-8 mt-3 font-bold");
-    			add_location(span7, file$7, 164, 16, 7886);
+    			add_location(span7, file$7, 164, 16, 7897);
     			attr_dev(div14, "class", "box row-start-2 row-span-1 col-start-3 col-span-1 z-10");
-    			add_location(div14, file$7, 162, 12, 7746);
+    			add_location(div14, file$7, 162, 12, 7757);
     			attr_dev(path9, "stroke-linecap", "round");
     			attr_dev(path9, "stroke-linejoin", "round");
     			attr_dev(path9, "stroke-width", "3");
     			attr_dev(path9, "d", "M20 12H4");
-    			add_location(path9, file$7, 171, 143, 8418);
+    			add_location(path9, file$7, 171, 143, 8434);
     			attr_dev(svg9, "xmlns", "http://www.w3.org/2000/svg");
     			attr_dev(svg9, "class", "h-24 w-24 ml-9 mt-4");
     			attr_dev(svg9, "fill", "none");
     			attr_dev(svg9, "viewBox", "0 0 39 39");
     			attr_dev(svg9, "stroke", "currentColor");
-    			add_location(svg9, file$7, 171, 20, 8295);
+    			add_location(svg9, file$7, 171, 20, 8311);
     			attr_dev(button7, "class", "btn btn-error btn-square btn-outline w-36 h-24 -ml-3 -mt-5");
-    			add_location(button7, file$7, 170, 16, 8172);
-    			attr_dev(div15, "class", "box row-start-3 row-span-1 col-start-3 col-span-1");
-    			add_location(div15, file$7, 168, 12, 8037);
+    			add_location(button7, file$7, 170, 16, 8188);
+    			attr_dev(div15, "class", "box row-start-3 row-span-1 col-start-3 col-span-1 z-30");
+    			add_location(div15, file$7, 168, 12, 8048);
     			attr_dev(div16, "class", "grid grid-cols-3 grid-rows-3 gap-2 w-2/5 h-2/5 absolute ml-36 -mt-9");
-    			add_location(div16, file$7, 133, 8, 5352);
+    			add_location(div16, file$7, 133, 8, 5358);
     			attr_dev(div17, "class", "box row-start-2 row-span-1 col-start-1 col-span-1 -mt-[10px]");
-    			add_location(div17, file$7, 127, 4, 5258);
-    			attr_dev(div18, "class", "grid grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute z-10 ");
+    			add_location(div17, file$7, 127, 4, 5264);
+    			attr_dev(div18, "class", "grid grid-cols-1 grid-rows-2 gap-2 w-full h-full absolute ");
     			add_location(div18, file$7, 72, 0, 1800);
     		},
     		l: function claim(nodes) {
@@ -3963,7 +3969,7 @@ var app = (function () {
     			create_component(telescoutendgame.$$.fragment);
     			attr_dev(div0, "class", "box row-start-1 row-span-1 col-start-1 col-span-1");
     			add_location(div0, file$5, 6, 4, 241);
-    			attr_dev(div1, "class", "box row-start-1 row-end-2 col-start-2 col-span-1 absolute z-20");
+    			attr_dev(div1, "class", "box row-start-1 row-end-2 col-start-2 col-span-1 absolute");
     			add_location(div1, file$5, 9, 4, 352);
     			attr_dev(div2, "class", "grid overflow-hidden grid-cols-2 grid-rows-1 gap-2 w-full h-full fixed");
     			add_location(div2, file$5, 5, 0, 151);
@@ -8326,9 +8332,9 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Restart";
     			attr_dev(div, "class", "ml-[292px] mt-[30px] absolute");
-    			add_location(div, file$2, 37, 0, 2074);
+    			add_location(div, file$2, 68, 0, 2389);
     			attr_dev(button, "class", "btn btn-square btn-success btn-outline w-[200px] h-[100px] ml-[775px] mt-[330px] text-xl");
-    			add_location(button, file$2, 41, 0, 2224);
+    			add_location(button, file$2, 72, 0, 2539);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8483,6 +8489,7 @@ var app = (function () {
     		error.update(n => false);
     		comment.update(n => "");
     		matchStage.update(n => 0);
+    		autoNotif.update(n => false);
     	}
 
     	const writable_props = [];
@@ -8520,6 +8527,7 @@ var app = (function () {
     		matchStageString,
     		attentionAlert,
     		autoStage,
+    		autoNotif,
     		QrCode: Lib,
     		commentNoCommas,
     		qrString,
@@ -8910,7 +8918,7 @@ var app = (function () {
     /* src\App.svelte generated by Svelte v3.48.0 */
     const file = "src\\App.svelte";
 
-    // (52:4) {:else}
+    // (50:4) {:else}
     function create_else_block(ctx) {
     	let t;
 
@@ -8933,14 +8941,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(52:4) {:else}",
+    		source: "(50:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (34:0) {#if properSize}
+    // (32:0) {#if properSize}
     function create_if_block(ctx) {
     	let main;
     	let t;
@@ -8980,7 +8988,7 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			attr_dev(main, "class", "svelte-1u63nb1");
     			toggle_class(main, "scroll-lock", true);
-    			add_location(main, file, 34, 0, 1092);
+    			add_location(main, file, 32, 0, 985);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
@@ -9069,14 +9077,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(34:0) {#if properSize}",
+    		source: "(32:0) {#if properSize}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (37:4) {#if matchStageValue>0}
+    // (35:4) {#if matchStageValue>0}
     function create_if_block_6(ctx) {
     	let headerblob;
     	let current;
@@ -9108,14 +9116,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6.name,
     		type: "if",
-    		source: "(37:4) {#if matchStageValue>0}",
+    		source: "(35:4) {#if matchStageValue>0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:34) 
+    // (46:34) 
     function create_if_block_5(ctx) {
     	let startpage;
     	let current;
@@ -9147,14 +9155,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5.name,
     		type: "if",
-    		source: "(48:34) ",
+    		source: "(46:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (46:34) 
+    // (44:34) 
     function create_if_block_4(ctx) {
     	let qrgenpage;
     	let current;
@@ -9186,14 +9194,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(46:34) ",
+    		source: "(44:34) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (44:30) 
+    // (42:30) 
     function create_if_block_3(ctx) {
     	let postscout;
     	let current;
@@ -9225,14 +9233,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(44:30) ",
+    		source: "(42:30) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (42:30) 
+    // (40:30) 
     function create_if_block_2(ctx) {
     	let telescout;
     	let current;
@@ -9264,14 +9272,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(42:30) ",
+    		source: "(40:30) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (40:0) {#if matchStageValue===1}
+    // (38:0) {#if matchStageValue===1}
     function create_if_block_1(ctx) {
     	let automanager;
     	let current;
@@ -9303,7 +9311,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(40:0) {#if matchStageValue===1}",
+    		source: "(38:0) {#if matchStageValue===1}",
     		ctx
     	});
 
@@ -9398,7 +9406,7 @@ var app = (function () {
     	let clicksValue;
     	let attentionAlertValue;
     	let matchStageValue;
-    	let properSize = false;
+    	let properSize;
 
     	const clickSubscription = clicks.subscribe(value => {
     		clicksValue = value;
@@ -9421,11 +9429,8 @@ var app = (function () {
 
     	$$self.$capture_state = () => ({
     		HeaderBlob,
-    		fade,
-    		fly,
     		clicks,
     		attentionAlert,
-    		AutoLobby,
     		AutoManager,
     		matchStage,
     		TeleScout,

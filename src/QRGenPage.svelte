@@ -1,9 +1,41 @@
 <script>
-    import {alliance, teamNumber, name, matchStage, taxi, startPosX, startPosY, autoUpperScore, autoUpperFail, autoLowerScore, autoLowerFail, teleUpperScore, teleUpperFail, teleLowerScore, teleLowerFail, climbAttemptLevel, climbSuccessLevel, playDefenseDuration, playDefenseQuality, receiveDefenseDuration, drivingQuality, sauceQuality, intakeQuality, error, comment, matchStageString, attentionAlert, autoStage} from "./stores";
+    import {
+        alliance,
+        teamNumber,
+        name,
+        matchStage,
+        taxi,
+        startPosX,
+        startPosY,
+        autoUpperScore,
+        autoUpperFail,
+        autoLowerScore,
+        autoLowerFail,
+        teleUpperScore,
+        teleUpperFail,
+        teleLowerScore,
+        teleLowerFail,
+        climbAttemptLevel,
+        climbSuccessLevel,
+        playDefenseDuration,
+        playDefenseQuality,
+        receiveDefenseDuration,
+        drivingQuality,
+        sauceQuality,
+        intakeQuality,
+        error,
+        comment,
+        matchStageString,
+        attentionAlert,
+        autoStage,
+        autoNotif
+    } from "./stores";
     import QrCode from "svelte-qrcode"
     let commentNoCommas = $comment.replaceAll(",", "")
     let qrString = $alliance +","+ $teamNumber +","+ $name +","+ $startPosX +","+ $startPosY+","+$taxi+","+$autoUpperScore+","+$autoUpperFail+","+$autoLowerScore+","+$autoLowerFail+","+$teleUpperScore+","+$teleUpperFail+","+$teleLowerScore+","+$teleLowerFail+","+$climbAttemptLevel+","+$climbSuccessLevel+","+$playDefenseDuration+","+$playDefenseQuality+","+$receiveDefenseDuration+","+$drivingQuality+","+$sauceQuality+","+$intakeQuality+","+$error+","+commentNoCommas
 
+
+    //resets all variables to their starting state. Probably should use a destroyed onmount but too late
     function restart(){
         alliance.update(n=>"Red")
         teamNumber.update(n=>null)
@@ -33,12 +65,15 @@
         error.update(n=>false)
         comment.update(n=>"")
         matchStage.update(n=>0)
+        autoNotif.update(n=>false)
     }
 </script>
+
+<!--loads QR Code-->
 <div class="ml-[292px] mt-[30px] absolute">
 <QrCode size=440 color="#fbbf24" background="#171212" errorCorrection="Q" value={qrString} />
 </div>
-
+<!--restarts application-->
 <button on:click = {restart} class="btn btn-square btn-success btn-outline w-[200px] h-[100px] ml-[775px] mt-[330px] text-xl">
     Restart
 </button>
