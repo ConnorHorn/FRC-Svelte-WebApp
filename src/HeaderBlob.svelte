@@ -1,6 +1,6 @@
 
 <script>
-    import {clicks, matchStage, matchStageString, startPosX} from './stores.js';
+    import {matchStage, matchStageString, startPosX} from './stores.js';
     import {attentionAlert} from "./stores.js";
     let teamNumber = 6328
     let alliance = "Blue"
