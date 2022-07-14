@@ -88,7 +88,7 @@
     <div class=" float-right w-3/7 mr-24 relative z-10">
     <p in:fly="{{ y: 400, duration: 2000 }}" out:fade>
 
-        <img on:click={tarmacClick} src="public/static/images/tarmac.png" alt="Pic Name"  class="w-full"/>
+        <img on:click={tarmacClick} src="tarmac.png" alt="Pic Name"  class="w-full"/>
     </p>
     </div>
 
